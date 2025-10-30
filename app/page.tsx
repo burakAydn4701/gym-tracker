@@ -124,6 +124,7 @@ export default function Page() {
                             label="Sets"
                             value={workout.sets}
                             onChange={(val) => updateWorkout(workout.id, "sets", val)}
+                            step={1}
                         />
 
                         {/* Reps */}
@@ -131,6 +132,7 @@ export default function Page() {
                             label="Reps"
                             value={workout.reps}
                             onChange={(val) => updateWorkout(workout.id, "reps", val)}
+                            step={1}
                         />
 
                         {/* Weight */}
@@ -138,6 +140,7 @@ export default function Page() {
                             label="Weight"
                             value={workout.weight}
                             onChange={(val) => updateWorkout(workout.id, "weight", val)}
+                            step={5}
                         />
                     </div>
                 ))}
@@ -150,25 +153,27 @@ function NumberControl({
                            label,
                            value,
                            onChange,
+                           step
                        }: {
     label: string;
     value: number;
     onChange: (val: number) => void;
+    step: number;
 }) {
     return (
         <div className="flex flex-col items-center justify-center">
             <button
-                onClick={() => onChange(value + 1)}
+                onClick={() => onChange(value + step)}
                 className="text-white text-xl leading-none hover:opacity-75"
             >
-                ↑
+                ▲
             </button>
             <span className="text-lg">{value}</span>
             <button
-                onClick={() => onChange(Math.max(0, value - 1))}
+                onClick={() => onChange(Math.max(0, value - step))}
                 className="text-white text-xl leading-none hover:opacity-75"
             >
-                ↓
+                ▼
             </button>
             <span className="text-xs text-zinc-400 mt-1">{label}</span>
         </div>
