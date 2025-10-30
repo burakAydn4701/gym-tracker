@@ -76,18 +76,21 @@ export default function Page() {
                     onChange={(e) => setNewWorkout({ ...newWorkout, name: e.target.value })}
                 />
                 <input
+                    type={"number"}
                     className="bg-zinc-900 px-3 py-2 rounded-lg w-20 text-center"
                     placeholder="Sets"
                     value={newWorkout.sets}
                     onChange={(e) => setNewWorkout({ ...newWorkout, sets: e.target.value })}
                 />
                 <input
+                    type={"number"}
                     className="bg-zinc-900 px-3 py-2 rounded-lg w-20 text-center"
                     placeholder="Reps"
                     value={newWorkout.reps}
                     onChange={(e) => setNewWorkout({ ...newWorkout, reps: e.target.value })}
                 />
                 <input
+                    type={"number"}
                     className="bg-zinc-900 px-3 py-2 rounded-lg w-24 text-center"
                     placeholder="Weight"
                     value={newWorkout.weight}
