@@ -143,7 +143,7 @@ export default function Page() {
                             label="Weight"
                             value={workout.weight}
                             onChange={(val) => updateWorkout(workout.id, "weight", val)}
-                            step={5}
+                            step={1}
                         />
                     </div>
                 ))}

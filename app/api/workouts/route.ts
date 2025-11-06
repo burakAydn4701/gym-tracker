@@ -65,7 +65,7 @@ export async function DELETE(req: Request) {
             return NextResponse.json({error: "Missing id."}, {status: 404});
 
         const result = await pool.query(
-            `DELETE FROM workouts WHERE id = ${id}`,
+            `DELETE FROM workouts WHERE id = $1 RETURNING *`,
             [id]
         )
 
